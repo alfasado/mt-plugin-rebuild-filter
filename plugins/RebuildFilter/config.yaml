@@ -1,0 +1,40 @@
+name: RebuildFilter
+id:   RebuildFilter
+author_name: Alfasado Inc.
+author_link: http://alfasado.net/
+description: '<__trans phrase="If checked customfield, not publish Entry/Page/Category/Folder archive.">'
+version: 0.1
+l10n_class: RebuildFilter::L10N
+config_settings:
+    CategoryFilterBasename:
+        default: categoryfilter
+    PageFilterBasename:
+        default: pagefilter
+    IndividualFilterBasename:
+        default: entryfilter
+    FolderFilterBasename:
+        default: folderfilter
+callbacks:
+    build_file_filter: >
+        sub {
+            my ( $cb, %args ) = @_;
+            my $at  = $args{ ArchiveType };
+            if ( ( $at eq 'Individual' ) || ( $at eq 'Category' ) ||
+                ( $at eq 'Page' ) || ( $at eq 'Folder' ) ) {
+                my $basename = MT->config( $at . 'FilterBasename' );
+                return 1 unless $basename;
+                $basename = 'field.' . $basename;
+                my $obj;
+                if ( ( $at eq 'Category' ) || ( $at eq 'Folder' ) ) {
+                    $obj = $args{ Category };
+                } else {
+                    $obj = $args{ Entry };
+                }
+                if ( $obj->has_column( $basename ) ) {
+                    if ( $obj->$basename ) {
+                        return 0;
+                    }
+                }
+            }
+            return 1;
+        }

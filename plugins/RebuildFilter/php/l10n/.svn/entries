@@ -1,0 +1,52 @@
+8
+
+dir
+156
+svn://junnama@svn.alfasado.net/pasona/trunk/MovableTypeOnAzure/mt/plugins/Pasona/php/l10n
+svn://junnama@svn.alfasado.net/pasona
+
+
+
+2012-12-04T02:30:16.193551Z
+15
+yagishita
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+c20854f1-c6a1-40c2-bc0c-28f85542c4e8
+
+l10n_en.php
+file
+
+
+
+
+2013-01-05T06:00:52.000000Z
+3fad94b8c2dd826cf5d9c1f37c3af3de
+2012-12-04T02:30:16.193551Z
+15
+yagishita
+
+l10n_ja.php
+file
+
+
+
+
+2013-01-05T06:00:52.000000Z
+104147a60100453f3ef5c67d024e7037
+2012-12-04T02:30:16.193551Z
+15
+yagishita
+
