@@ -1,6 +1,0 @@
-<?php
-global $Lexicon_ja;
-$Lexicon_ja = array(
-    'An Error Occurs. API Error.' => 'エラーが発生しました。APIからデータを取得できませんでした。',
-);
-?>
