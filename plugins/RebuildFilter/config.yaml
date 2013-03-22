@@ -3,7 +3,7 @@ id:   RebuildFilter
 author_name: Alfasado Inc.
 author_link: http://alfasado.net/
 description: '<__trans phrase="If checked customfield, not publish Entry/Page/Category/Folder archive.">'
-version: 0.1
+version: 0.2
 l10n_class: RebuildFilter::L10N
 config_settings:
     CategoryFilterBasename:
@@ -32,6 +32,12 @@ callbacks:
                 }
                 if ( $obj->has_column( $basename ) ) {
                     if ( $obj->$basename ) {
+                        my $file  = $args{ File };
+                        require MT::FileMgr;
+                        my $fmgr = MT::FileMgr->new( 'Local' ) or die MT::FileMgr->errstr;
+                        if ( $fmgr->exists( $file ) ) {
+                            $fmgr->delete( $file );
+                        }
                         return 0;
                     }
                 }
