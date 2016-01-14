@@ -6,7 +6,7 @@ class RebuildFilter extends MTPlugin {
         'id'   => 'RebuildFilter',
         'author_name' => 'Alfasado Inc.',
         'author_link' => 'http://alfasado.net/',
-        'version' => '0.1',
+        'version' => '0.3',
         'callbacks' => array(
             'pre_build_page' => 'pre_build_page'
         ),
@@ -15,6 +15,7 @@ class RebuildFilter extends MTPlugin {
             'PageFilterBasename' => array( 'default' => 'pagefilter' ),
             'IndividualFilterBasename' => array( 'default' => 'entryfilter' ),
             'FolderFilterBasename' => array( 'default' => 'folderfilter' ),
+            'RebuildFilterDeleteFile' => array( 'default' => 0 ),
         ),
     );
 
@@ -30,7 +31,9 @@ class RebuildFilter extends MTPlugin {
                 $obj = $ctx->stash( 'category' );
             }
             if ( $obj->$basename ) {
-                $ctx->error( $app->translate( 'Page not found - [_1]', $app->stash( 'request' ) ) );
+                if ( $app->config( 'RebuildFilterDeleteFile' ) ) {
+                    $ctx->error( $app->translate( 'Page not found - [_1]', $app->stash( 'request' ) ) );
+                }
             }
         }
     }
