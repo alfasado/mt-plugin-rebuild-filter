@@ -27,10 +27,12 @@ Movable Type / PowerCMS で特定のアーカイブ出力を止めるプラグ�
 - ベースネーム: アーカイブによって変わる ※1
 
 ※1 アーカイブのタイプごとのベースネーム
-|**記事の場合**|entryfilter|
-|**ウェブページの場合**|pagefilter|
-|**カテゴリの場合**|categoryfilter|
-|**フォルダの場合**|folderfilter|
+<table>
+<tr><th>記事の場合</th><td>entryfilter</td></tr>
+<tr><th>ウェブページの場合</th><td>pagefilter</td></tr>
+<tr><th>カテゴリの場合</th><td>categoryfilter</td></tr>
+<tr><th>フォルダの場合</th><td>folderfilter</td></tr>
+</table>
 
 2. 設定後に指定したアーカイブが出力されないことを確認
 
@@ -40,10 +42,12 @@ Movable Type / PowerCMS で特定のアーカイブ出力を止めるプラグ�
 ベースネームを変更することが可能です。
 
 mt-config.cgiに記載する環境変数
-|**ブログ記事**|IndividualFilterBasename|
-|**ウェブページ**|PageFilterBasename|
-|**カテゴリ**|CategoryFilterBasename|
-|**フォルダ**|FolderFilterBasename|
+<table>
+<tr><th>ブログ記事</th><td>IndividualFilterBasename</td></tr>
+<tr><th>ウェブページ</th><td>PageFilterBasename</td></tr>
+<tr><th>カテゴリ</th><td>CategoryFilterBasename</td></tr>
+<tr><th>フォルダ</th><td>FolderFilterBasename</td></tr>
+</table>
 
 例)
 IndividualFilterBasename entryfilternopublish
