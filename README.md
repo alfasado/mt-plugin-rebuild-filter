@@ -7,7 +7,7 @@ Movable Type / PowerCMS で特定のアーカイブ出力を止めるプラグ�
 
 ## 動作環境
 
-- PowerCMS ver.4 がインストールされている環境
+- Movable Type がインストールされている環境
 
 ## インストール
 
@@ -49,8 +49,9 @@ mt-config.cgiに記載する環境変数
 <tr><th>フォルダ</th><td>FolderFilterBasename</td></tr>
 </table>
 
-例)
+```
 IndividualFilterBasename entryfilternopublish
+```
 
 ## 制限事項
 
