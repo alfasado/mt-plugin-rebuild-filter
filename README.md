@@ -66,4 +66,4 @@ IndividualFilterBasename entryfilternopublish
 
 - Alfasado Inc.
 - https://alfasado.net/
-- 2016年1月14日
+- 2018年5月7日
